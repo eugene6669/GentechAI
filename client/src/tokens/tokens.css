@@ -1,0 +1,74 @@
+/*
+ * Gentech AI Tools — Design Tokens
+ *
+ * Every color, radius, shadow, and spacing value used in the app is defined
+ * here as a CSS custom property (a.k.a. "design token"). Tailwind reads
+ * these via its config, so you write `bg-canvas` or `text-charcoal` in JSX
+ * and the actual hex value lives only in this file.
+ *
+ * HOW DARK MODE WORKS:
+ *   By default the :root tokens are the light theme.
+ *   When the <html> element has class="dark", the `.dark` block below
+ *   overrides only the tokens that change. Components don't need to know
+ *   which mode is active — they just use the token names.
+ */
+
+:root {
+  /* ── Brand ── */
+  --color-orange: #FF5000;
+  --color-orange-tint: #FFE6DA;
+  --color-orange-accessible: #D94400; /* WCAG AA on light bg for small text */
+
+  /* ── Neutrals ── */
+  --color-charcoal: #2E2E2E;
+  --color-canvas: #FAFAF7;
+  --color-surface: #FFFFFF;
+  --color-sand: #F3EFE8;
+  --color-muted: #6B6B6B;
+  --color-border: #E8E3DA;
+
+  /* ── Secondary ── */
+  --color-teal: #1E6F73;
+  --color-teal-tint: #DDEEEE;
+
+  /* ── Status ── */
+  --color-success: #2E9E6B;
+  --color-warning: #E8A317;
+  --color-error: #D64545;
+
+  /* ── Typography ── */
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* ── Radii ── */
+  --radius-card: 12px;
+  --radius-button: 10px;
+  --radius-lg: 16px;
+  --radius-sm: 6px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-soft: 0 1px 3px 0 rgba(0,0,0,0.04), 0 1px 2px -1px rgba(0,0,0,0.03);
+
+  /* ── Transitions ── */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+
+  /* ── Sidebar ── */
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+}
+
+/* ── Dark mode overrides ── */
+.dark {
+  --color-charcoal: #E8E3DA;
+  --color-canvas: #1A1A1A;
+  --color-surface: #2E2E2E;
+  --color-sand: #252525;
+  --color-muted: #9B9B9B;
+  --color-border: #3D3D3D;
+  --color-teal-tint: #1A3A3B;
+  --color-orange-tint: #3D2010;
+
+  --shadow-soft: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 2px -1px rgba(0,0,0,0.15);
+}
